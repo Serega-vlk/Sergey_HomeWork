@@ -17,7 +17,7 @@ public class Controller {
         model.generateRandInt();
         view.printStartMessage();
         while (true){
-            view.printBounds(model.getMinRange(), model.getMaxRange());
+            view.printBounds(model.getMinBound(), model.getMaxBound());
             int number = CONSOLE_READER.nextInt();
             if (number > 100 || number < 0){
                 view.printErrorMessage();
@@ -31,10 +31,10 @@ public class Controller {
             }
             if (model.isBiggerThanNumber()){
                 view.printOnNumberIsBigger(number);
-                model.setMaxRange(number);
+                model.setMaxBound(number);
             } else {
                 view.printOnNumberIsLess(number);
-                model.setMinRange(number);
+                model.setMinBound(number);
             }
         }
     }

@@ -1,13 +1,11 @@
 package JavaGame;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
-
 import java.util.ArrayList;
 
 public class Model {
     private int number;
-    private int minRange;
-    private int maxRange;
+    private int minBound;
+    private int maxBound;
     private ArrayList<Integer> userEnters;
 
     public Model(){
@@ -16,8 +14,8 @@ public class Model {
 
     public void generateRandInt(){
         number = (int) Math.round(Math.random() * 100);
-        minRange = 0;
-        maxRange = 100;
+        minBound = 0;
+        maxBound = 100;
     }
 
     public void addUserNumber(int number){
@@ -32,22 +30,22 @@ public class Model {
         return number < userEnters.get(userEnters.size() - 1);
     }
 
-    public int getMinRange() {
-        return minRange;
+    public int getMinBound() {
+        return minBound;
     }
 
-    public int getMaxRange() {
-        return maxRange;
+    public int getMaxBound() {
+        return maxBound;
     }
 
-    public void setMinRange(int minRange) {
-        if ((number - minRange) < (number - this.minRange))
-            this.minRange = minRange;
+    public void setMinBound(int minBound) {
+        if ((number - minBound) < (number - this.minBound))
+            this.minBound = minBound;
     }
 
-    public void setMaxRange(int maxRange) {
-        if ((maxRange - number) < (this.maxRange - number))
-            this.maxRange = maxRange;
+    public void setMaxBound(int maxBound) {
+        if ((maxBound - number) < (this.maxBound - number))
+            this.maxBound = maxBound;
     }
 
     public ArrayList<Integer> getUserEnters() {
