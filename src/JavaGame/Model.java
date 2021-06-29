@@ -39,12 +39,12 @@ public class Model {
     }
 
     public void setMinBound(int minBound) {
-        if ((number - minBound) < (number - this.minBound))
+        if ((number - minBound) < (number - this.minBound) && minBound < number)
             this.minBound = minBound;
     }
 
     public void setMaxBound(int maxBound) {
-        if ((maxBound - number) < (this.maxBound - number))
+        if ((maxBound - number) < (this.maxBound - number) && maxBound > number)
             this.maxBound = maxBound;
     }
 

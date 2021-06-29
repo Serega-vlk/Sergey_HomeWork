@@ -28,6 +28,7 @@ public class View {
         for (int i : stats){
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 
     public void printErrorMessage(){
