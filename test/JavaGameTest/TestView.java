@@ -1,5 +1,6 @@
 package JavaGameTest;
 
+import JavaGame.GlobalConstants;
 import JavaGame.View;
 import org.junit.*;
 
@@ -26,7 +27,8 @@ public class TestView {
     @Test
     public void testPrintStartMessage() {
         view.printStartMessage();
-        Assert.assertEquals(String.format("Загадано число от 0 до 100.\nПопробуйте угадать его.%n"), output.toString());
+        Assert.assertEquals(String.format("Загадано число от %d до %d.\nПопробуйте угадать его.%n", GlobalConstants.MIN_BOUND,
+                GlobalConstants.MAX_BOUND), output.toString());
     }
 
     @Test

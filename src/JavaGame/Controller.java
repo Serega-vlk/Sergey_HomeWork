@@ -27,7 +27,7 @@ public class Controller {
                 view.printErrorMessage();
                 continue;
             }
-            if (number > 100 || number < 0){
+            if (number >= model.getMaxBound() || number <= model.getMinBound()){
                 view.printErrorMessage();
                 continue;
             }

@@ -1,5 +1,6 @@
 package JavaGameTest;
 
+import JavaGame.GlobalConstants;
 import JavaGame.Model;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -34,13 +35,15 @@ public class TestModel {
 
     @Test
     public void testGenerateRandInt() throws IllegalAccessException {
-        model.generateRandInt();
-        int number = TestModel.number.getInt(model);
-        int minBound = TestModel.minBound.getInt(model);
-        int maxBound = TestModel.maxBound.getInt(model);
-        Assert.assertEquals(minBound, 0);
-        Assert.assertEquals(maxBound, 100);
-        Assert.assertTrue(number >= 0 && number <= 100);
+        for (int i = 0; i < 10000; i++) {
+            model.generateRandInt();
+            int number = TestModel.number.getInt(model);
+            int minBound = TestModel.minBound.getInt(model);
+            int maxBound = TestModel.maxBound.getInt(model);
+            Assert.assertEquals(minBound, GlobalConstants.MIN_BOUND);
+            Assert.assertEquals(maxBound, GlobalConstants.MAX_BOUND);
+            Assert.assertTrue(number >= GlobalConstants.MIN_BOUND && number <= GlobalConstants.MAX_BOUND);
+        }
     }
 
     @Test
@@ -48,7 +51,7 @@ public class TestModel {
         userEnters.set(model, new ArrayList<>());
         ArrayList<Integer> ints = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
-            int rand = (int) Math.round(Math.random() * 100);
+            int rand = (int) Math.round(Math.random() * GlobalConstants.MAX_BOUND - 2) + 1;
             ints.add(rand);
             model.addUserNumber(rand);
         }

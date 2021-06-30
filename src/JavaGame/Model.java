@@ -13,9 +13,9 @@ public class Model {
     }
 
     public void generateRandInt(){
-        number = (int) Math.round(Math.random() * 100);
-        minBound = 0;
-        maxBound = 100;
+        number = (int) Math.round(Math.random() * (GlobalConstants.MAX_BOUND - 2)) + 1;
+        minBound = GlobalConstants.MIN_BOUND;
+        maxBound = GlobalConstants.MAX_BOUND;
     }
 
     public void addUserNumber(int number){

@@ -4,23 +4,24 @@ import java.util.List;
 
 public class View {
     public void printStartMessage(){
-        System.out.println("Загадано число от 0 до 100.\nПопробуйте угадать его.");
+        System.out.printf("Загадано число от %d до %d.\nПопробуйте угадать его.%n", GlobalConstants.MIN_BOUND,
+                GlobalConstants.MAX_BOUND);
     }
 
     public void printOnNumberIsBigger(int number){
-        System.out.println(String.format("число %d больше искомого.", number));
+        System.out.printf("число %d больше искомого.%n", number);
     }
 
     public void printBounds(int min, int max){
-        System.out.println(String.format("Введите число от %d до %d", min, max));
+        System.out.printf("Введите число от %d до %d%n", min, max);
     }
 
     public void printOnNumberIsLess(int number){
-        System.out.println(String.format("число %d меньше искомого.", number));
+        System.out.printf("число %d меньше искомого.%n", number);
     }
 
     public void printOnNumberIsFound(int number){
-        System.out.println(String.format("число %d совпадает с искомым.", number));
+        System.out.printf("число %d совпадает с искомым.%n", number);
     }
 
     public void printUserStats(List<Integer> stats){
