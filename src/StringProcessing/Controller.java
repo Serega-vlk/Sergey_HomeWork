@@ -88,7 +88,7 @@ public class Controller {
             case 0:
             case 1:
             case 2:
-                return input.matches("^[А-ЯA-Z]\\D+$");
+                return input.matches("^[А-ЯA-Z][a-zа-я]+$");
             case 3:
                 return input.matches("^\\+\\d{12}%") || input.matches("\\d{10}$");
             case 4:
