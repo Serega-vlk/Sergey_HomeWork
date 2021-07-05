@@ -8,15 +8,6 @@ public class Person {
     private String email;
     private String nickname;
 
-    public Person(String name, String surname, String middleName, String telephone, String email, String nickname) {
-        this.name = name;
-        this.surname = surname;
-        this.middleName = middleName;
-        this.telephone = telephone;
-        this.email = email;
-        this.nickname = nickname;
-    }
-
     public Person(String[] args){
         this.name = args[0];
         this.surname = args[1];

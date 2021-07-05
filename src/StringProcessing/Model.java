@@ -9,6 +9,10 @@ public class Model {
         this.people = new ArrayList<>();
     }
 
+    /**
+     * Метод добовляет нового пользователя в список.
+     * @param p пользователь которого нужно добавить
+     */
     public void addPerson(Person p){
         this.people.add(p);
     }

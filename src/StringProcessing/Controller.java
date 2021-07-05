@@ -45,6 +45,10 @@ public class Controller {
         view.printAllUsers(userData);
     }
 
+    /**
+     * метод задаёт вопрос соответсвующий определённым индексам.
+     * @param question номер вопроса (от 0 до 5)
+     */
     public void aksUser(int question){
         switch (question){
             case 0:
@@ -70,6 +74,15 @@ public class Controller {
         }
     }
 
+    /**
+     * Метод проверяет переданное слово на соответствие шаблону регулярного выражения.
+     * @param input слово которое нужно проверить
+     * @param question новмер заданного вопроса для проверки на определённый шаблон
+     *                 регулярного выражения
+     * @return
+     * true - если соответсвие найдено.
+     * false - если переданное слово не соотвествует шаблону регулярного выражения.
+     */
     public boolean processUser(String input, int question){
         switch (question){
             case 0:
