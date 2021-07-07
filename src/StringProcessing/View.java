@@ -1,62 +1,61 @@
 package StringProcessing;
 
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Properties;
+import java.util.ResourceBundle;
 
 public class View {
-    public static final String ENTER = "введите";
-    public static final String SPACE = " ";
-    public static final String DOUBLE_POINT = ":";
-    public static final String TELEPHONE = "телефон";
-    public static final String SURNAME = "фамилию";
-    public static final String NAME = "имя";
-    public static final String NICKNAME = "никнейм (начиная с @)";
-    public static final String MIDDLE_NAME = "отчество";
-    public static final String EMAIL = "електронную почту";
-    public static final String ALL_USERS = "все пользователи";
-    public static final String CONTINUE = "желаете продолжить?(y или n)";
-    public static final String ERROR = "данные введены некоректно, повторите попытку";
-    public static final String USER_ADDED = "пользователь успешно добавлен";
+    private ResourceBundle messages;
+
+    public void setLocale(String locale){
+        messages = ResourceBundle.getBundle("resources\\StringProcessing\\message", new Locale(locale));
+    }
+
+    public void choiceLocale(){
+        System.out.println("Choice Locale (ru, en, ...):");
+    }
 
     public void askToName(){
-        System.out.println(ENTER + SPACE + NAME + DOUBLE_POINT);
+        System.out.println(messages.getString("input.name"));
     }
 
     public void askToSurname(){
-        System.out.println(ENTER + SPACE + SURNAME + DOUBLE_POINT);
+        System.out.println(messages.getString("input.surname"));
     }
 
     public void askToMiddleName(){
-        System.out.println(ENTER + SPACE + MIDDLE_NAME + DOUBLE_POINT);
+        System.out.println(messages.getString("input.middle.name"));
     }
 
     public void askToTelephone(){
-        System.out.println(ENTER + SPACE + TELEPHONE + DOUBLE_POINT);
+        System.out.println(messages.getString("input.telephone"));
     }
 
     public void askToEmail(){
-        System.out.println(ENTER + SPACE + EMAIL + DOUBLE_POINT);
+        System.out.println(messages.getString("input.email"));
     }
 
     public void askToNickname(){
-        System.out.println(ENTER + SPACE + NICKNAME + DOUBLE_POINT);
+        System.out.println(messages.getString("input.nickname"));
     }
 
     public void printAllUsers(ArrayList<String> usersData){
-        System.out.println(ALL_USERS + DOUBLE_POINT);
+        System.out.println(messages.getString("output.all.users"));
         for (String user : usersData){
             System.out.println(user);
         }
     }
 
     public void askToContinue(){
-        System.out.println(CONTINUE + DOUBLE_POINT);
+        System.out.println(messages.getString("output.ask.to.continue"));
     }
 
     public void printError(){
-        System.out.println(ERROR);
+        System.out.println(messages.getString("output.error"));
     }
 
-    public void printUserAdded(){
-        System.out.println(USER_ADDED);
+    public void printUserAdded() {
+        System.out.println(messages.getString("output.user.added"));
     }
 }

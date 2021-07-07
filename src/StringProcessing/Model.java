@@ -3,7 +3,7 @@ package StringProcessing;
 import java.util.ArrayList;
 
 public class Model {
-    private final ArrayList<Person> people;
+    private final ArrayList<User> people;
 
     public Model(){
         this.people = new ArrayList<>();
@@ -13,11 +13,11 @@ public class Model {
      * Метод добовляет нового пользователя в список.
      * @param p пользователь которого нужно добавить
      */
-    public void addPerson(Person p){
+    public void addPerson(User p){
         this.people.add(p);
     }
 
-    public ArrayList<Person> getPeople() {
+    public ArrayList<User> getPeople() {
         return people;
     }
 }

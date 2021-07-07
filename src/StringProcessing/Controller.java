@@ -15,6 +15,9 @@ public class Controller {
     }
 
     public void registerUser(){
+        view.choiceLocale();
+        String locale = CONSOLE.nextLine();
+        view.setLocale(locale);
         newUser:
         while (true){
             String[] user = new String[6];
@@ -28,7 +31,7 @@ public class Controller {
                     continue newUser;
                 }
             }
-            model.addPerson(new Person(user));
+            model.addPerson(new User(user));
             view.printUserAdded();
             view.askToContinue();
             while (true){
@@ -39,7 +42,7 @@ public class Controller {
             }
         }
         ArrayList<String> userData = new ArrayList<>();
-        for (Person p : model.getPeople()){
+        for (User p : model.getPeople()){
             userData.add(p.toString());
         }
         view.printAllUsers(userData);
@@ -88,13 +91,13 @@ public class Controller {
             case 0:
             case 1:
             case 2:
-                return input.matches("^[А-ЯA-Z][a-zа-я]+$");
+                return input.matches(RegexContainer.NAME_PATTERN);
             case 3:
-                return input.matches("^\\+\\d{12}%") || input.matches("\\d{10}$");
+                return input.matches(RegexContainer.TELEPHONE_PATTERN) || input.matches(RegexContainer.TELEPHONE_PATTERN2);
             case 4:
-                return input.matches("^\\w+@\\D+\\.\\D{2,}$");
+                return input.matches(RegexContainer.EMAIL_PATTERN);
             case 5:
-                return input.matches("^@\\w{4,10}$");
+                return input.matches(RegexContainer.NICKNAME_PATTERN);
             default:
                 throw new IndexOutOfBoundsException("No questions for this index");
         }

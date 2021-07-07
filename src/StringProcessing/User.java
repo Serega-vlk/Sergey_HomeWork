@@ -1,6 +1,6 @@
 package StringProcessing;
 
-public class Person {
+public class User {
     private String name;
     private String surname;
     private String middleName;
@@ -8,7 +8,7 @@ public class Person {
     private String email;
     private String nickname;
 
-    public Person(String[] args){
+    public User(String[] args){
         this.name = args[0];
         this.surname = args[1];
         this.middleName = args[2];
@@ -43,13 +43,13 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Пользователь{" +
-                "Имя='" + name + '\'' +
-                ", Фамилия='" + surname + '\'' +
-                ", Отчество='" + middleName + '\'' +
-                ", Телефон='" + telephone + '\'' +
-                ", Електронная почта='" + email + '\'' +
-                ", Никнейм='" + nickname + '\'' +
+        return "User{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                ", nickname='" + nickname + '\'' +
                 '}';
     }
 }
