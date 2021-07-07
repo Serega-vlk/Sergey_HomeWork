@@ -8,6 +8,10 @@ import java.util.ResourceBundle;
 public class View {
     private ResourceBundle messages;
 
+    public View(){
+        messages = ResourceBundle.getBundle("resources\\StringProcessing\\message", new Locale("en"));
+    }
+
     public void setLocale(String locale){
         messages = ResourceBundle.getBundle("resources\\StringProcessing\\message", new Locale(locale));
     }
