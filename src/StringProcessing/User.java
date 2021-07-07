@@ -1,13 +1,13 @@
 package StringProcessing;
 
 public class User {
-    private String name;
-    private String surname;
-    private String middleName;
-    private String telephone;
-    private String email;
-    private String nickname;
-    private String birthday;
+    private final String name;
+    private final String surname;
+    private final String middleName;
+    private final String telephone;
+    private final String email;
+    private final String nickname;
+    private final String birthday;
 
     public User(String[] args){
         this.name = args[0];
