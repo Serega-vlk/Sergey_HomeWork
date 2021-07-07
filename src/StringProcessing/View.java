@@ -40,6 +40,10 @@ public class View {
         System.out.println(messages.getString("input.nickname"));
     }
 
+    public void askToBirthday(){
+        System.out.println(messages.getString("input.birthday"));
+    }
+
     public void printAllUsers(ArrayList<String> usersData){
         System.out.println(messages.getString("output.all.users"));
         for (String user : usersData){

@@ -20,8 +20,8 @@ public class Controller {
         view.setLocale(locale);
         newUser:
         while (true){
-            String[] user = new String[6];
-            for (int i = 0; i < 6; i++) {
+            String[] user = new String[7];
+            for (int i = 0; i < 7; i++) {
                 aksUser(i);
                 String answer = CONSOLE.nextLine();
                 if (processUser(answer, i)){
@@ -72,6 +72,9 @@ public class Controller {
             case 5:
                 view.askToNickname();
                 break;
+            case 6:
+                view.askToBirthday();
+                break;
             default:
                 throw new IndexOutOfBoundsException("No questions for this index");
         }
@@ -91,13 +94,15 @@ public class Controller {
             case 0:
             case 1:
             case 2:
-                return input.matches(RegexContainer.NAME_PATTERN);
+                return input.matches(RegexContainer.ALL_NAMES_PATTERN);
             case 3:
                 return input.matches(RegexContainer.TELEPHONE_PATTERN) || input.matches(RegexContainer.TELEPHONE_PATTERN2);
             case 4:
                 return input.matches(RegexContainer.EMAIL_PATTERN);
             case 5:
                 return input.matches(RegexContainer.NICKNAME_PATTERN);
+            case 6:
+                return input.matches(RegexContainer.BIRTHDAY_PATTERN);
             default:
                 throw new IndexOutOfBoundsException("No questions for this index");
         }
