@@ -22,16 +22,23 @@ public class Controller {
         while (true){
             String[] user = new String[7];
             for (int i = 0; i < 7; i++) {
-                aksUser(i);
-                String answer = CONSOLE.nextLine();
-                if (processUser(answer, i)){
-                    user[i] = answer;
-                } else {
-                    view.printError();
-                    continue newUser;
+                while (true) {
+                    aksUser(i);
+                    String answer = CONSOLE.nextLine();
+                    if (processUser(answer, i)) {
+                        user[i] = answer;
+                        break;
+                    } else {
+                        view.printError();
+                    }
                 }
             }
-            model.addPerson(new User(user));
+            try {
+                model.addPerson(new User(user));
+            } catch (InvalidUsernameException e){
+                System.err.println(e);
+                continue;
+            }
             view.printUserAdded();
             view.askToContinue();
             while (true){
@@ -42,7 +49,7 @@ public class Controller {
             }
         }
         ArrayList<String> userData = new ArrayList<>();
-        for (User p : model.getPeople()){
+        for (User p : model.getUsers()){
             userData.add(p.toString());
         }
         view.printAllUsers(userData);
