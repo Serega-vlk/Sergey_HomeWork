@@ -103,7 +103,7 @@ public class Controller {
             case 2:
                 return input.matches(RegexContainer.ALL_NAMES_PATTERN);
             case 3:
-                return input.matches(RegexContainer.TELEPHONE_PATTERN) || input.matches(RegexContainer.TELEPHONE_PATTERN2);
+                return input.matches(RegexContainer.TELEPHONE_PATTERN);
             case 4:
                 return input.matches(RegexContainer.EMAIL_PATTERN);
             case 5:
