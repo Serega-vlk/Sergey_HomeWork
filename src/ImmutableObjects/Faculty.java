@@ -27,7 +27,6 @@ public class Faculty implements Cloneable {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-        if (this.hashCode() == obj.hashCode()) return true;
         if (obj instanceof Faculty){
             Faculty f = (Faculty) obj;
             if (this.hashCode() == f.hashCode()) {
