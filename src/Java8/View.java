@@ -28,8 +28,9 @@ public class View {
     }
 
     public void printElementsAfterMultiply(int[] before, int [] after){
+        System.out.println("До умножения:");
         Arrays.stream(before).forEach(x -> System.out.print(x + " "));
-        System.out.println();
+        System.out.println("\nПосле умножения:");
         Arrays.stream(after).forEach(x -> System.out.print(x + " "));
     }
 }
