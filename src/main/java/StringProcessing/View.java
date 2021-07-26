@@ -9,11 +9,11 @@ public class View {
     private ResourceBundle messages;
 
     public View(){
-        messages = ResourceBundle.getBundle("resources\\StringProcessing\\message", new Locale("en"));
+        messages = ResourceBundle.getBundle("\\StringProcessing\\message", new Locale("en"));
     }
 
     public void setLocale(String locale){
-        messages = ResourceBundle.getBundle("resources\\StringProcessing\\message", new Locale(locale));
+        messages = ResourceBundle.getBundle("\\StringProcessing\\message", new Locale(locale));
     }
 
     public void choiceLocale(){
