@@ -1,7 +1,6 @@
 package JavaGameTest;
 
 import JavaGame.Model;
-import jdk.nashorn.internal.runtime.GlobalConstants;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
